@@ -26,12 +26,12 @@
 				<ul class="navbar-nav navbar-nav-scroll dropdown-hover mx-auto">
 
 					<li class="nav-item ">
-						<a class="nav-link active" href="#"><i class="fa-solid fa-house"></i></a>
+						<a class="nav-link {{ app.current_route == 'app_main' ? 'active' : '' }} " href=" {{ path('app_main') }} "><i class="fa-solid fa-house"></i></a>
 					</li>
 
 					<!-- Nav item | NOTRE SOCIETE -->
 					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="#" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notre Société</a>
+						<a class="nav-link dropdown-toggle {{ app.current_route starts with 'app_societe' ? 'active' : '' }} " href="#" data-bs-auto-close="outside" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Notre Société</a>
 						<div class="dropdown-menu dropdown-menu-size-lg p-3">
 							<div class="row">
 								<!-- Image and button -->
@@ -49,7 +49,7 @@
 								<!-- Index nav links -->
 								<div class="col-xl-6">
 									<ul class="list-unstyled pt-3">
-										<li> <a class="dropdown-item" href="#">Qui sommes-nous?</a> </li>
+										<li> <a class="dropdown-item" href=" {{ path('app_societe') }} ">Qui sommes-nous?</a> </li>
 										<li> <a class="dropdown-item" href="#">Recrutement</a> </li>
 									</ul>
 								</div>
@@ -62,7 +62,7 @@
 											<h6 class="mb-2 mb-sm-0">une question, un besoin?</h6>
 											<small class="mb-0">N'hésitez pas à nous contacter</small>
 										</div>
-										<a href="#" class="btn btn-sm btn-primary">Contact</a>
+										<a href=" {{ path('contact') }} " class="btn btn-sm btn-primary">Contact</a>
 									</div>
 								</div>
 							</div>
@@ -153,7 +153,7 @@
 					</li>
 
 					<!-- Nav item -->
-					<li class="nav-item"> <a class="nav-link" href="#">Contact</a> </li>
+					<li class="nav-item"> <a class="nav-link {{ app.current_route starts with 'contact' ? 'active' : '' }} " href=" {{ path('contact') }} ">Contact</a> </li>
 
 				</ul>
 			</div>
